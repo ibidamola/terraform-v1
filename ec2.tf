@@ -37,7 +37,7 @@ resource "aws_instance" "terraform_server"{
     count = 1
     key_name = "terraform"
 
-    security_groups = [aws_security_group.terraform_sg]
+    security_groups = [aws_security_group.terraform_sg.id]
 
     provisioner "remote-exec"{
         inline = [
